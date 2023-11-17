@@ -1,10 +1,8 @@
 package tn.esprit.tpfoyer.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
@@ -21,6 +19,8 @@ public class Bloc {
     private  Long idBloc;
     private  String nomBloc;
     private  Long capaciteBloc;
+    @ToString.Exclude
+    @JsonIgnore
     @ManyToOne
     Foyer foyer;
 

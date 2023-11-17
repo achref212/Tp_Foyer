@@ -1,2 +1,14 @@
-package tn.esprit.tpfoyer.service;public interface IBlocService {
+package tn.esprit.tpfoyer.service;
+
+import tn.esprit.tpfoyer.entity.Bloc;
+
+import java.util.List;
+
+public interface IBlocService {
+
+    public List<Bloc> retrieveAllBlocs();
+    public Bloc retieveBloc(long blocId);
+    public Bloc addBloc(Bloc b);
+    public void removeBloc(long blocId);
+    public Bloc modifyBloc(Bloc bloc);
 }

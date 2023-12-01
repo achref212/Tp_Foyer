@@ -1,10 +1,8 @@
 package tn.esprit.tpfoyer.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
@@ -23,9 +21,11 @@ public class Chambre {
     private TypeChambre typeC;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @JsonIgnore
     private Set<Reservation> reservations;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     Bloc bloc;
 
 

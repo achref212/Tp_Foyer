@@ -1,10 +1,8 @@
 package tn.esprit.tpfoyer.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.apache.commons.lang3.builder.ToStringExclude;
 
 @Entity
 @Getter
@@ -19,5 +17,6 @@ public class Universite {
     private String adresse;
 
     @OneToOne(mappedBy="idUniversite")
+    @ToString.Exclude
     private Foyer foyer;
 }

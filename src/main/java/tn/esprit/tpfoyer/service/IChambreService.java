@@ -10,4 +10,6 @@ public interface IChambreService {
     public Chambre addChambre(Chambre c);
     public void removeChambre(long chambreId);
     public Chambre modifyChambre(Chambre chambre);
+
+    public  Chambre findchbycin(String cin);
 }

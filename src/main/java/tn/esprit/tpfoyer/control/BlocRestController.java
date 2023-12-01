@@ -51,4 +51,24 @@ public class BlocRestController {
     public Bloc modifyChambre(@RequestBody Bloc b){
         return blocService.modifyBloc(b);
     }
+    @Operation(description = "add  Bloc and foyer on DB")
+    @PostMapping("/add-Bloc-and-Foyer")
+    public Bloc addBlocandFoyer (@RequestBody Bloc b){
+        return blocService.addBlocandFoyer(b);
+    }
+    @Operation(description = "affecter-Bloc-to-Foyer")
+    @PutMapping("/affecter-Bloc-a-Foyer/{B-id}/{P-id}")
+    public void affectrBloctoFoyer(@PathVariable("B-id") Long Bid,
+                                   @PathVariable("P-id") Long Pid){
+blocService.assignBloctoFoyer(Bid,Pid);
+    }
+    @Operation(description = "desaffecter-Bloc-to-Foyer")
+    @PutMapping("/desaffecter-Bloc-a-Foyer/{B-id}/{P-id}")
+    public void desaffecterBloctoFoyer(@PathVariable("B-id") Long Bid,
+                                   @PathVariable("P-id") Long Pid){
+        blocService.assignBloctoFoyer(Bid,Pid);
+    }
+
+
+
 }

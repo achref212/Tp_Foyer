@@ -10,4 +10,6 @@ public interface IFoyerService {
     public Foyer addFoyer(Foyer f);
     public void removeFoyer(long foyerId);
     public Foyer modifyFoyer(Foyer foyer);
+
+
 }

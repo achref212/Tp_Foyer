@@ -1,10 +1,9 @@
 package tn.esprit.tpfoyer.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.apache.commons.lang3.builder.ToStringExclude;
 
 import java.util.Date;
 import java.util.Set;
@@ -21,6 +20,8 @@ public class Reservation {
     private String idReservation;
     private Date anneeUniversitaire;
     private Boolean estValide;
+    @ToString.Exclude
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Etudiant>etudiants;
 

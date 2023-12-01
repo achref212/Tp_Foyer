@@ -51,4 +51,12 @@ public class ChambreRestController {
         return chambreService.modifyChambre(c);
     }
 
+
+    // http://localhost:8089/tpfoyer/chambre/find_chambre_by_cin
+    @Operation(description = "Trouver-chambre-selon-etudiant/{cin}")
+    @GetMapping("/chambres-selon-cin/{cin}")
+    public Chambre findchbycin(@PathVariable("cin") String cin){
+        return  chambreService.findchbycin(cin);
+    }
+
 }

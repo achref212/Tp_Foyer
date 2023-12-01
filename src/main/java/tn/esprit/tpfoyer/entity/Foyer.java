@@ -1,10 +1,8 @@
 package tn.esprit.tpfoyer.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Set;
 
@@ -13,7 +11,6 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Foyer {
     @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +23,7 @@ public class Foyer {
     private Universite idUniversite;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "foyer")
+    @ToString.Exclude
   private Set<Bloc> blocs;
 
 }

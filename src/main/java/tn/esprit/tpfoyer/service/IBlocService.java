@@ -11,4 +11,8 @@ public interface IBlocService {
     public Bloc addBloc(Bloc b);
     public void removeBloc(long blocId);
     public Bloc modifyBloc(Bloc bloc);
+    public Bloc addBlocandFoyer(Bloc b);
+    public void assignBloctoFoyer(Long Bid,Long Fid);
+    public void desaffecterBloctoFoyer(Long Bid,Long Fid);
+
 }
